@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Style Queries</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Lexend+Peta:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Special+Elite&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/c4b91ecedf.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+    <header class="default">
+
+        <div class="theme-selector">
+            <ul class="btn-group" role="group">
+                <li><button type="button" id="theme-default" class="btn btn-light rounded-0 btn-lg">Default</button></li>
+                <li><button type="button" id="theme-happy" class="btn btn-light rounded-0 btn-lg">Happy</button></li>
+                <li><button type="button" id="theme-sad" class="btn btn-light rounded-0 btn-lg">Sad</button></li>
+                <li><button type="button" id="theme-angry" class="btn btn-light rounded-0 btn-lg">Angry</button></li>
+            </ul>
+        </div>
+
+        <section class="hero">
+            
+            <div class="videos">
+                <video autoplay muted loop width="100%" class="video video-happy">
+                    <source src="videos/sun.mp4" type="video/mp4"></src>
+                </video>
+                <video autoplay muted loop width="100%" class="video video-sad">
+                    <source src="videos/rain.mp4" type="video/mp4"></src>
+                </video>
+                <video autoplay muted loop width="100%" class="video video-angry">
+                    <source src="videos/fire.mp4" type="video/mp4"></src>
+                </video>
+            </div>
+
+            <div class="overlay"></div>
+
+            <div class="heading">
+                <h1>Style Queries</h1>
+                <h2>and the great things you can do with them</h2>
+            </div>
+        </section>
+
+    </header>
+
+    <section class="sq-info">
+        <div class="what-are">
+
+            <div class="what-are-p">
+                <h1>What are Style Queries?</h1>
+                <p>Style Queries are a feature of container queries, which are used to apply certain styles to elements inside its parent, responding to size. Style queries are one step above it, as it lets developers now apply styles to child elements with its container, defined by the “style()” notation within the @container rule. It makes theming a lot more straightforward and gives developers the ability to reuse cards in a much more flexible manner. And the best part: it requires no JavaScript!</p>
+            </div>
+            
+                <div class="example1">
+                    <img class="happy-example" src="images/happy-example.jpeg" alt="Screenshot of code which shows how to make use of themes in Style Queries">
+                    <p>This essentially means:<br>"If the container has --theme: happy, the following classes within the container have these styles applied".</p>
+                </div>
+        </div>
+
+        <div class="why-are">
+            
+                <img src="images/example2.jpeg" class="example2" alt="Screenshot of code that shows how much more complicated it wouldve been wihtout Style Queries">
+
+                <div class="why-are-p">
+                    <h1>Why Style Queries?</h1>
+                <p>It's an easier and more powerful way to transform your pages. For example, the interactive aspect of the hero was made with the custom property “--theme” with some simple JavaScript only being utilized for assigning functions to the buttons. Otherwise, it would have looked similar to this (left) with the addition of all the other themes as well as a lot of repetition from various selectors rather than using the one “--theme” ruling. </p>
+                </div>
+        </div>
+        
+    </section>
+
+    <section class="cards">
+        <div class="cards-heading">
+            <h1>let's explore further how style queries can be useful</h1>
+            <p>in this example, we will be using one of the most common uses of style queries: product cards. this is a great way to show the capabilities of customization within repeating card types</p>
+        </div>
+
+        <div class="products">
+            <div class="product-card" style="--card-style: sale">
+
+                <div class="imgh1">
+                    <img src="https://images.unsplash.com/photo-1706177208693-2e3c68e5f0f2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Purple sweatpants">
+
+                    <div class="badge popular-badge">
+                        <p><i class="fa-solid fa-star-of-life fa-xl"></i>popular</p>
+                    </div>
+                    <div class="badge sale-badge">
+                        <p><i class="fa-solid fa-tag"></i>sale</p>
+                    </div>
+
+                    <h1>Athletic Sweatpants - Women</h1>
+                 </div>
+                
+
+                <div class="pricecart">
+                    <h2>$32.00</h2>
+                    
+                    <button type="button" class="btn btn-primary btn-md rounded"><i class="fa-solid fa-cart-arrow-down fa-lg"></i></button>
+                </div>
+                <h2 id="sale-price">$22.99</h2>
+            </div>
+
+            <div class="product-card" style="--card-style: popular">
+
+                <img src="https://images.unsplash.com/photo-1600054904350-1d493ae5f922?q=80&w=930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="bunch of shoes">
+
+                <div class="badge popular-badge">
+                    <p><i class="fa-solid fa-star-of-life fa-xl"></i>popular</p>
+                </div>
+                <div class="badge sale-badge">
+                    <p><i class="fa-solid fa-tag"></i>sale</p>
+                </div>
+                
+                <h1>Low Top Athletic Sneakers - Black & White</h1>
+
+                <div class="pricecart">
+                    <h2>$18.00</h2>
+                    <h2 class="sale-price"></h2>
+                    <button type="button" class="btn btn-primary btn-md rounded"><i class="fa-solid fa-cart-arrow-down fa-lg"></i></button>
+                </div>
+                
+            </div>
+
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1740711152088-88a009e877bb?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="blue button down shirt">
+                <div class="badge popular-badge">
+                    <p><i class="fa-solid fa-star-of-life fa-xl"></i>popular</p>
+                </div>
+                <div class="badge sale-badge">
+                    <p><i class="fa-solid fa-tag fa-xl"></i>sale</p>
+                </div>
+                <h1>Blue Button Down Shirt</h1>
+
+                <div class="pricecart"><h2>$64.00</h2>
+                <button type="button" class="btn btn-primary btn-md rounded"><i class="fa-solid fa-cart-arrow-down fa-lg"></i></button>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="explaination">
+            <p>*Include all possible elements inside the card’s HTML, such as a sale badge, a popularity icon, and the sale price. Make sure these elements are hidden by default using CSS so that they do not appear on every card.  
+                <br>
+                *Each card is then set as a style container using ‘container-type: style’, and a custom variable like ‘--card-style' is applied to indicate the card’s context. Style queries can then detect this variable and selectively reveal or modify elements within the card. 
+                <br> <br>
+                 With this, the card components can adapt its appearance automatically based on the style context it is placed in, demonstrating how style queries help create flexible and reusable UI components with just a few lines of code!! </p>
+
+                 <div class="pictures">
+                    <img src="images/htmlss.jpeg">
+                    <img src="images/Screen Shot 2026-03-10 at 4.19.46 AM Large.jpeg">
+                    <img src="images/containerss.jpeg">
+                 </div>
+        </div>
+    </section>
+    
+    <footer>
+        <section class="sources">
+            <h1>helpful links!</h1>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@container#browser_compatibility">browser compatibility</a></li>
+                <li><a href="https://developer.chrome.com/docs/css-ui/style-queries">getting started with style queries</a></li>
+                <li><a href="https://www.creatures.sh/blog/css-style-queries/">CSS Style Queries creatures.sh blog</a></li>
+            </ul>
+        </section>
+    </footer>
+
+
+
+
+
+
+
+    <script>
+        document.querySelectorAll('.theme-selector button').forEach(button => {
+            button.addEventListener('click', () => {
+                const theme = button.id.replace('theme-', ''); 
+                const header = document.querySelector('.header');
+
+                document.querySelector('header').className = theme; //replaces the header class according to the buttons
+            });
+        });
+    </script>
+</body>
+</html>

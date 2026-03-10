@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    container-type: style;
+}
+
+.happy {
+    --theme: happy;
+}
+.sad {
+    --theme: sad;
+}
+.angry {
+    --theme: angry;
+}
+
+.theme-selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px #333 solid;
+}
+
+.theme-selector ul {
+    list-style-type: none;
+}
+
+.hero {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    border-bottom: #333 2px solid;
+    background-color: lightgrey;
+    position: relative;
+    z-index: 1;
+}
+
+.heading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.videos {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-2;
+}
+
+.video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:none;
+}
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+@container style(--theme: happy) {
+    .hero {
+        background-color: lightgoldenrodyellow;
+        color: rgb(216, 92, 26);
+        font-family: 'Henny Penny', sans-serif;
+        text-shadow: 2px 2px 2px #333;
+    }
+    .video-happy{
+        display:block;
+    }
+    .overlay{
+        background: radial-gradient(circle,
+        rgba(250,235,185,0.5) 0%,
+        rgba(224,99,61,0.5) 50%,
+        rgba(169,237,252,0.5) 100%);
+    }
+}
+
+@container style(--theme: sad) {
+    .hero {
+        background-color: lightblue;
+        color: rgb(200, 200, 209);
+        font-family: "Lexend Peta", sans-serif;
+        text-shadow: 2px 2px 2px #333;
+    }
+    .video-sad {
+        display:block;
+    }
+    .overlay{
+        background: linear-gradient(180deg,
+        rgba(2, 0, 36, 0.5) 0%, 
+        rgba(9, 9, 121, 0.5) 35%, 
+        rgba(0, 212, 255, 0.5) 100%);
+    }
+}
+
+@container style(--theme: angry) {
+    .hero {
+        background-color: darkred;
+        color: rgb(20, 0, 0);
+        font-family: "Special Elite", sans-serif;
+        text-shadow: 4px 4px 4px #9c0707;
+    }
+    .video-angry {
+        display: block;
+    }
+    .overlay {
+        background-color: rgba(250, 0, 0, 0.3)
+    }
+}
+
+/* info */
+
+.sq-info {
+    padding: 0px 100px;
+    justify-self: center;
+    border-bottom: 2px solid #333;
+}
+
+.sq-info h1 {
+    font-family: 'Zalando Sans SemiExpanded', sans-serif;
+}
+
+.sq-info p {
+    font-family: 'Source Code Pro', sans-serif;
+    letter-spacing: -0.05em;
+}
+
+.what-are {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+.what-are-p {
+    max-width: 50%;
+}
+
+.example1 {
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    font-size: 0.8em;
+}
+
+.example1 img {
+    max-width: 400px;
+    height: auto;
+}
+
+.why-are {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0px 50px;
+    text-align: right;
+}
+
+.why-are-p {
+    max-width: 50%;
+}
+
+.example2 {
+    max-width: 35%;
+    height: auto;
+}
+
+/* cards */
+
+.cards {
+    background-color: rgb(225, 214, 198);
+    padding: 50px 100px;
+    border-bottom:#333 2px solid;
+}
+
+.cards-heading {
+    font-family: 'Zalando Sans SemiExpanded', sans-serif;
+    text-align: center;
+}
+
+.cards-heading p {
+    font-family: 'Source Code Pro', sans-serif;
+    text-align: center;
+    letter-spacing: -0.05em;
+}
+
+.products {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 50px 0;
+    color: darkblue;
+}
+
+.products h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.product-card {
+    display: flex;
+    max-width: 25%;
+    height: 100%;
+    flex-direction: column; 
+    justify-content: space-between;
+    container-type: style;
+    position: relative;
+}
+
+.product-card img {
+    float:left;
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    position: relative;
+    box-shadow: 4px 4px 2px #746868;
+    margin-bottom: 10px;
+}
+
+.pricecart {
+    max-height:max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* style stuff */
+
+.fa-star-of-life, .fa-tag {
+    font-size: 2em;
+}
+
+.badge {
+    display:none;
+}
+
+.sale-price{
+    display:none;
+}
+
+.sale {
+    --card-style: sale;
+}
+
+.popular {
+    --card-style: popular;
+}
+
+@container style(--card-style: popular){
+    img {
+        border: 3px purple solid;
+    }
+    .popular-badge {
+        display: block;
+        color: purple;
+        position: absolute;
+        top: 2%;
+        right: 3%;
+    }
+  }
+
+  @container style(--card-style: sale){
+    img {
+        border: 3px firebrick solid;
+    }
+    .pricecart h2 {
+      color:rgba(128, 128, 128, 0.5);
+      text-decoration: line-through;
+    }
+
+    .sale-badge {
+        display: block;
+        color: firebrick;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
+
+    #sale-price {
+        display: block;
+        color:firebrick;
+        font-weight:bold;
+    }
+  }
+
+  .explaination p {
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: 20px;
+  }
+
+  .pictures {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .pictures img {
+    max-width: 250px;
+    height: auto;
+  }
+
+  .sources {
+    padding: 20px 0px;
+    background-color: rgb(249, 221, 225);
+    color: palevioletred;
+    text-align: center;
+    font-family: 'Zalando Sans SemiExpanded', sans-serif;
+    border-bottom: 2px solid #333;
+  }
+
+  .sources li {
+    list-style-type: none;
+    text-decoration: none;
+  }
