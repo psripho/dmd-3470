@@ -108,6 +108,11 @@ nav img {
     gap: 5px;
 }
 
+.heading img {
+    max-width: 40%;
+    height: auto;
+}
+
 .features {
     height: 100dvh;
     display: flex;
@@ -210,8 +215,16 @@ nav img {
     background: linear-gradient(0deg, rgba(255, 255, 255, 1) 91%, rgba(255, 236, 0, 1) 100%);
 }
 
+.manage img {
+    border-radius: 15px;
+}
+
 .wallet {
     background-color: #f7f7f7;
+}
+
+.wallet img {
+    border-radius: 15px;
 }
 
 .feature-container {
